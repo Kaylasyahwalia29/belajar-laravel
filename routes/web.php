@@ -63,7 +63,7 @@ Route::get('biodata/{nama}','{beratbadan}','{tinggibadan}', function ($name, $Be
 });
 
 
-Route::get('myself/{name}/{bb}/{tb}', function $a, $bb, $tb) {
+Route::get('myself/{name}/{bb}/{tb}', function ($a, $bb, $tb) {
     $bmi = $bb / (($tb / 100) ** 2);
     if ($bmi > 30) {
         $ket = "Obsesitas";
@@ -75,6 +75,11 @@ Route::get('myself/{name}/{bb}/{tb}', function $a, $bb, $tb) {
         $ket = "Kekurangan berat badan";
     }
 
-    return "Nama: $a<br>".
-        "Berat Badan = $bb <br> Tinggi Badan = $tb <br> Nilai bmi = $nilai <br> Keterangan = $ket";
-};
+    return "Nama: $a<br> Berat Badan = $bb <br> Tinggi Badan = $tb <br> Nilai bmi = $bmi <br> Keterangan = $ket";
+});
+
+// route optional parameter -> ditandai dengan ?
+Route::get('myname/{name}', function($a = "abdu"){
+    return "my name is $a";
+});
+
