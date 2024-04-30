@@ -2,6 +2,9 @@
 
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Models\Barang;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +61,7 @@ Route::get ('product/{name}', function($name) {
 
 // buat sebuah route dengan 3 buah parameter
 // nama, berat badan, tinggi badan
-Route::get('biodata/{nama}','{beratbadan}','{tinggibadan}', function ($name, $Beratbadan, $Tinggibadan) {
+Route::get('biodata/{nama}/{beratbadan}/{tinggibadan}', function ($name, $Beratbadan, $Tinggibadan) {
     return "nama: $name<br> beratbadan: $Beratbadan <br> tinggibadan: $Tinggibadan";
 });
 
@@ -69,7 +72,7 @@ Route::get('myself/{name}/{bb}/{tb}', function ($a, $bb, $tb) {
         $ket = "Obsesitas";
     } elseif ($bmi > 25) {
         $ket = "Kelebihan";
-    } elseif ($bmi > 18.5) {
+    } elseif ($bmi > 18.5) {    
         $ket = "ideal";
     } elseif ($bmi < 18.5) {
         $ket = "Kekurangan berat badan";
@@ -83,3 +86,14 @@ Route::get('myname/{name}', function($a = "abdu"){
     return "my name is $a";
 });
 
+// menampilkan database
+route::get('/testmodel', function (){
+    $data = Post::all();
+    return $data;
+});
+
+
+route::get('/barang', function (){
+    $data = Barang::all();
+    return $data;
+});
