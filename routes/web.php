@@ -4,7 +4,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
-
+use App\Models\Siswa;
 
 /*
 |--------------------------------------------------------------------------
@@ -88,12 +88,41 @@ Route::get('myname/{name}', function($a = "abdu"){
 
 // menampilkan database
 route::get('/testmodel', function (){
-    $data = Post::all();
-    return $data;
+    $post = Post::all();
+     return view('tampil_post', compact('post'));
+    return $post;
 });
 
 
 route::get('/barang', function (){
-    $data = Barang::all();
-    return $data;
+    $barang = Barang::all();
+    return view('tampil_barang', compact('barang'));
+    return $barang;
 });
+
+
+route::get('/siswa', function (){
+    $siswa = Siswa::all();
+    return view('tampil_siswa', compact('siswa'));
+
+    //siswa = Siswa::find(3);
+    // $data = Siswa::where('alamat', 'like', 'tci%')->get();
+
+    
+    // $data = new Siswa();
+    // $data -> nama = "dinda";
+    // $data -> jenis_kelamin = "perempuan";
+    // $data -> alamat = "Kp Cipasung";
+    // $data -> agama = "islam";
+    // $data -> telepon = "13452";
+    // $data -> email = "dinda@gamil.com";
+
+    // $data->save();
+
+
+
+
+    return $siswa;
+});
+
+
