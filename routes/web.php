@@ -5,7 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\Barang;
 use App\Models\Siswa;
-
+use App\Models\Pembeli;
+use App\Models\Barang2;
+use App\Models\Transaksi;
+use App\Models\Merk;
+use App\Models\Produk;
+use App\Models\Pengguna;
+use App\Models\Telepon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -119,10 +125,55 @@ route::get('/siswa', function (){
 
     // $data->save();
 
-
-
-
     return $siswa;
 });
+
+
+route::get('/pembeli', function (){
+    $pembeli = Pembeli::all();
+    return view('tampil_pembeli', compact('pembeli'));
+    return $pembeli;
+});
+
+
+route::get('/barang2', function (){
+    $barang2 = Barang2::all();
+    return view('tampil_barang2', compact('barang2'));
+    return $barang2;
+});
+
+route::get('/transaksi', function (){
+    $transaksi = Transaksi::all();
+    return view('tampil_transaksi', compact('transaksi'));
+    return $transaksi;
+});
+
+route::get('/merk', function (){
+    $merk = Merk::all();
+    return view('tampil_merk', compact('merk'));
+    return $merk;
+});
+
+route::get('/produk', function (){
+    $produk = Produk::all();
+    return view('tampil_produk', compact('produk'));
+    return $produk;
+});
+
+route::get('/pengguna', function (){
+    $pengguna = Pengguna::all();
+    return view('tampil_pengguna', compact('pengguna'));
+    return $pengguna;
+});
+
+route::get('/telepon', function (){
+    $telepon = Telepon::all();
+    return view('tampil_telepon', compact('telepon'));
+    return $telepon;
+});
+
+
+
+
 
 
