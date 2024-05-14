@@ -12,6 +12,10 @@ use App\Models\Merk;
 use App\Models\Produk;
 use App\Models\Pengguna;
 use App\Models\Telepon;
+use App\http\Controllers\PostController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\MerkController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -148,11 +152,11 @@ route::get('/transaksi', function (){
     return $transaksi;
 });
 
-route::get('/merk', function (){
-    $merk = Merk::all();
-    return view('tampil_merk', compact('merk'));
-    return $merk;
-});
+// route::get('/merk', function (){
+//     $merk = Merk::all();
+//     return view('tampil_merk', compact('merk'));
+//     return $merk;
+// });
 
 route::get('/produk', function (){
     $produk = Produk::all();
@@ -171,6 +175,23 @@ route::get('/telepon', function (){
     return view('tampil_telepon', compact('telepon'));
     return $telepon;
 });
+
+
+
+// controller
+route::get('posts', [PostController::class,'menampilkan'] );
+route::get('posts/{id}', [PostController::class,'show'] );
+
+
+route::get('/produk', [ProdukController::class, 'menampilkan']);
+route::get('/produk/{id}', [ProdukController::class, 'show']);
+
+
+route::get('/merk', [MerkController::class, 'menampilkan']);
+route::get('/merk/{id}', [MerkController::class, 'show']);
+
+
+
 
 
 
