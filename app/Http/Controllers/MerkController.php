@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\merk;
+use App\Models\Merk;
 use Illuminate\Http\Request;
 
 class MerkController extends Controller

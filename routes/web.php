@@ -15,6 +15,11 @@ use App\Models\Telepon;
 use App\http\Controllers\PostController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\MerkController;
+use Illuminate\Support\Facades\App\Http\Controller\HomeController;;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\BrandController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -191,10 +196,11 @@ route::get('/merk', [MerkController::class, 'menampilkan']);
 route::get('/merk/{id}', [MerkController::class, 'show']);
 
 
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
-
-
+// CRUD brand
+Route::resource('brand', BrandController::class);
 
 
 

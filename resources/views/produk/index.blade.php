@@ -20,16 +20,16 @@
     {{-- row 1 --}}
     <div class="container">
     <div class="row mt-5">
-      <center><h1>List Artikel</h1></center>
+      <center><h1>List Produk</h1></center>
     </div>
     {{-- /row 1 --}}
 
     {{-- row 2 --}}
-     <div class="row mt-4">
+     <div class="row mt-5">
             @foreach ( $produk as $data )  
             <div class="col-4 mt-5">
             <div class="card" style="width: 18rem;">
-                <img src="https://canden.bantulkab.go.id/assets/files/artikel/sedang_1515377400Jajan_Pasar_in_Jakarta.JPG" class="card-img-top" alt="...">
+                <img src="https://static.retailworldvn.com/Products/Images/12220/318039/smartphone-iphone-15-plus-6gb-256gb-yellow-thumb-600x600.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$data->nama_produk}}</h5>
                     <p class="card-text">{{$data->tanggal_produksi}}</p>

@@ -13,6 +13,6 @@ class ProdukController extends Controller
 
     public function show($id) {
          $produk = Produk::findOrFail($id);
-    return view('produk/index', compact('produk'));
+    return view('produk/show', compact('produk'));
     }
 }

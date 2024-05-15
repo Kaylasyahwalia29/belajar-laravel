@@ -19,12 +19,12 @@
     <div class="section">
     <div class="container">
         <div class="row mt-5">
-            <center><h1>Show Artikel</h1></center>
+            <center><h1>Show Post</h1></center>
         </div>
         <div class="row mt-5">
             <div class="col-4">
             <div class="card" style="width: 18rem;">
-                <img src="https://images.pexels.com/photos/109371/pexels-photo-109371.jpeg?auto=compress&cs=tinysrgb&w=400" class="card-img-top" alt="...">
+                <img src="https://www.jbhifi.com.au/cdn/shop/products/633114-Product-0-I-638309324483830928.jpg?v=1708044203" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$post->title}}</h5>
                     <p class="card-text">{{$post->content}}</p>
