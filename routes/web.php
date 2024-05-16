@@ -18,6 +18,7 @@ use App\Http\Controllers\MerkController;
 use Illuminate\Support\Facades\App\Http\Controller\HomeController;;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -69,9 +70,9 @@ Route::get ('vegetables', function (){
 
 
 // route parameter  parameter di tandai dengan ()
-Route::get ('product/{name}', function($name) {
-    return "produk: $name";
-});
+// Route::get ('product/{name}', function($name) {
+//     return "produk: $name";
+// });
 
 
 // buat sebuah route dengan 3 buah parameter
@@ -201,6 +202,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // CRUD brand
 Route::resource('brand', BrandController::class);
+Route::resource('product', ProductController::class);
 
 
 
